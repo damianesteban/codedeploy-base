@@ -1,17 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /server.js
-    destination: /home/ec2-user/app
-  - source: /package.json
-    destination: /home/ec2-user/app
+  - source: server.js
+    destination: /var/www
 hooks:
   BeforeInstall:
     - location: deploy/before_install.sh
       timeout: 300
+      runas: root
   ApplicationStart:
     - location: deploy/application_start.sh
       timeout: 300
+      runas: root
   ValidateService:
     - location: deploy/validate_service.sh
       timeout: 300
+      runas: root
