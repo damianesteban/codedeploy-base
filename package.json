@@ -1,0 +1,13 @@
+{
+  "name": "codedeploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Damian Esteban <damian.esteban@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.108.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "winston": "^2.3.1"
+  }
+}

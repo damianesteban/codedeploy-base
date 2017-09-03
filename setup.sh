@@ -21,5 +21,4 @@ echo "Creating the CloudFormation stack, this will take a few minutes ..."
 
 aws cloudformation wait stack-create-complete --stack-name $STACK_NAME
 
-echo "Done! Send an HTTP request to the following URL, please."
-aws cloudformation describe-stacks --stack-name $STACK_NAME --query 'Stacks[0].Outputs[?OutputKey==`URL`].OutputValue' --output text
+echo "Done!"
