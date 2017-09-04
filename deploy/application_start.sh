@@ -1,5 +1,6 @@
 #!/bin/bash
-#pkill -f node
+#pkill -f nodeoset -e
+set -e
 export PORT=80
 
 cd /home/ec2-user/server
