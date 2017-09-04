@@ -15,7 +15,7 @@ hooks:
   AfterInstall:
     - location: deploy/after_install.sh
       timeout: 300
-      runas: ubuntu
+      runas: root
   ValidateService:
     - location: deploy/validate_service.sh
       timeout: 300
