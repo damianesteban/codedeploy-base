@@ -1,0 +1,13 @@
+{
+  "name": "codedeploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:damianesteban/codedeploy-base.git",
+  "author": "Damian Esteban <damian.esteban@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "winston": "^2.3.1"
+  }
+}
