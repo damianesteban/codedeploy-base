@@ -44,11 +44,11 @@ exports.handler = function(event, context) {
       body += chunk;
     });
     response.on('end', function () {
-      if (response.statusCode === 200 && body.includes("<h1>Automation for the people</h1>")) {
+      if (response.statusCode === 200) {
         success("URL check successful.")
       } else {
         console.log(response.statusCode);
-        console.log8(body);
+        console.log(body);
         failure("Invalid status code or content.");
       }
     });
