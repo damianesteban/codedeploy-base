@@ -1,0 +1,24 @@
+deploy:
+- provider: s3
+  access_key_id: AKIAIJBESYLODCJKXLMQ
+  secret_access_key: &1
+    secure: 1oKyM+94H+b1/Dcjl8VuZcb9oBgBbLio7o26yoNfbynX49BVeTZMBGoZWrPIui5BYhjjLBUhvUO0DfjPTfiqjykpV/7EGx2tZlfs5Kv8xr9wNeSVdrVWIOQKi96rYLMUgT0nutDaxBJlp+XXOn6iqRiWMFw3hhDpaN9d2DEViHGhh3vJffYR867s9boY5Q+feDNLAg/rMxR7opq9hR5IYXYNm2wMdffhyoHCq0/Vv3YrVjDXWaHjl2/kgJwVDTYSx06HkUeviZcd+7HqwUjpoKhJioGy+rj971ea91O1bCIjLmbbITKOgLLF4A/CzxSu6fZg3KBr/pdc4kgWw8WMR+/MvL5KzqWW1Uau/JieMDcbMFAZKmXleGo2A5c9bSIY6q4pbgwZHaVxKsZGk3au83ryFXom19ubYCJkphtEE8S6RZnu4UooHgxatB1WMRHD5YIKzoabQ52cd2+EOnGYJ1u5YHfgEkvy26FmfMd4gFe+yndRrq2DpzdZgJdE2BYrfRvYPYu0VMJjdkkOT+syrCEHw5I3dbhFPmy+UKAcxSQ+/QpJPq+WBwiNU/L+jVx8x0+d2v1ZiTt3iEtmWbypf3Rj+HEx1kWUb4lhl3taLZXCQzgXuZYlGTGrozSdrHx7Ai/fo4ZM5JsGCBNJT7CZyNhq/MY5QvfpVEOd0pKI+ck=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: damianesteban/codedeploy-base
+    branch: master 
+  bucket: ec2-cdeploy-base-artifactstore-c5lpzthrayt9
+  upload_dir: ec2-cdeploy-base-Cod/staticwebs
+- provider: codedeploy
+  access_key_id: AKIAIJBESYLODCJKXLMQ
+  secret_access_key: *1
+  bucket: ec2-cdeploy-base-artifactstore-c5lpzthrayt9
+  key: ec2-cdeploy-base-Cod/staticwebs/app.zip
+  bundle_type: zip
+  application: ec2-cdeploy-base-Application-MC2TWZU4NBQM
+  deployment_group: ec2-cdeploy-base
+  on: *2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv app.zip dpl_cd_upload/app.zip
