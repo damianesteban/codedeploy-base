@@ -10,7 +10,7 @@ deploy:
   skip_cleanup: true
   region: us-east-1
   application: ec2-cdeploy-base-Application-MC2TWZU4NBQM
-  deployment_group: ec2-cdeploy-base
+  deployment_group: ec2-cdeploy-base-DeploymentGroup-JM5OBKNC84VS 
   revision_type: github
   on: &2
     repo: damianesteban/codedeploy-base
