@@ -6,14 +6,19 @@
   "author": "Damian Esteban <damian.esteban@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha tests/*.spec*"
+    "test": "./node_modules/.bin/istanbul cover --reporter=html ./node_modules/mocha/bin/_mocha tests/*.spec.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
     "chai": "^4.1.2",
     "express": "^4.15.4",
+    "istanbul": "^0.4.5",
     "mocha": "^3.5.0",
     "supertest": "^3.0.0",
     "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "nyc": "^11.2.0"
   }
 }
